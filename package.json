@@ -1,0 +1,22 @@
+{
+  "name": "micro-auth-example",
+  "version": "0.0.0",
+  "description": "Example auth microservice with `micro`",
+  "main": "index.js",
+  "repository": "https://github.com/onbjerg/micro-auth-example",
+  "author": "onbjerg <hi@notbjerg.me>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "jsonwebtoken": "^7.2.1",
+    "knex": "^0.12.6",
+    "micro": "^6.2.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "start": "micro -p 3000 index.js",
+    "lint": "standard"
+  }
+}

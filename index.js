@@ -1,7 +1,7 @@
-import { json, send, createError } from 'micro-core'
-import { compareSync } from 'bcrypt'
-import { sign } from 'jsonwebtoken'
-import knex from 'knex'
+const { json, send, createError } = require('micro-core')
+const { compareSync } = require('bcrypt')
+const { sign } = require('jsonwebtoken')
+const knex = require('knex')
 
 // Connect to Postgres
 var db = knex({
@@ -13,7 +13,7 @@ var db = knex({
  * Catch errors from the wrapped function.
  * If any errors are catched, a JSON response is generated for that error.
  */
-export const handleErrors = (fn) => async (req, res) => {
+const handleErrors = (fn) => async (req, res) => {
   try {
     return await fn(req, res)
   } catch (err) {
@@ -62,7 +62,7 @@ const auth = ({ email, password }) =>
     }, process.env.SECRET)
   }))
 
-export default handleErrors(
+module.exports = handleErrors(
   async (req, res) => await auth(
     await json(req)
   )

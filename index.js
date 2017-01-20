@@ -2,6 +2,11 @@ const { json, send, createError } = require('micro')
 const { compareSync } = require('bcrypt')
 const { sign } = require('jsonwebtoken')
 const knex = require('knex')
+const assert = require('assert')
+
+// Check for required environment variables
+assert(process.env.PG_CONNECTION_STRING, '`PG_CONNECTION_STRING` not set')
+assert(process.env.SECRET, '`SECRET` not set')
 
 // Connect to Postgres
 var db = knex({

@@ -1,6 +1,6 @@
 {
   "name": "micro-auth-example",
-  "version": "0.0.0",
+  "version": "2.0.1",
   "description": "Example auth microservice with `micro`",
   "main": "index.js",
   "repository": "https://github.com/onbjerg/micro-auth-example",

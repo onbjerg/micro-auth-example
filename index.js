@@ -1,4 +1,4 @@
-const { json, send, createError } = require('micro-core')
+const { json, send, createError } = require('micro')
 const { compareSync } = require('bcrypt')
 const { sign } = require('jsonwebtoken')
 const knex = require('knex')

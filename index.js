@@ -45,12 +45,12 @@ const attempt = (email, password) =>
   .select('id')
   .then((users) => {
     if (!users.length) {
-      throw createError(401, 'Not authenticated')
+      throw createError(401, 'That user does not exist')
     }
 
     const user = users[0]
     if (!compareSync(password, user.password)) {
-      throw createError(401, 'Not authenticated')
+      throw createError(401, 'Wrong password')
     }
 
     return user
